@@ -4,9 +4,9 @@ import { Calendar, MapPin, ExternalLink } from 'lucide-react';
 const Experience = () => {
     const experiences = [
         {
-            company: "Zoodle App",
+            company: "ZoodleApp",
             role: "React Native Developer",
-            period: "2025 - Present",
+            period: "2026 - Present",
             location: "New Delhi",
             description: "Working as a core developer building high-performance mobile applications for Android and iOS using React Native.",
             achievements: [
@@ -24,7 +24,7 @@ const Experience = () => {
         {
             company: "Fiverr",
             role: "Web & UI Developer",
-            period: "2025 - Present",
+            period: "2025 - December",
             location: "Remote",
             description: "Providing freelance web development services, specializing in React based responsive websites and UI components.",
             achievements: [
@@ -117,9 +117,9 @@ const Experience = () => {
                                                     href={link.url}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-${exp.color}-600 hover:bg-${exp.color}-700 text-white text-sm font-medium transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5`}
                                                 >
-                                                    {link.label} <ExternalLink size={12} />
+                                                    {link.label} <ExternalLink size={16} />
                                                 </a>
                                             ))}
                                         </div>

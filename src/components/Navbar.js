@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Github, Linkedin, Smartphone, Mail } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
+import logo from '../logo.png';
 
 const Navbar = ({ theme, toggleTheme }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -39,9 +40,11 @@ const Navbar = ({ theme, toggleTheme }) => {
                         whileHover={{ scale: 1.05 }}
                         className="flex-shrink-0 flex items-center gap-2 cursor-pointer"
                     >
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-violet-600 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30">
-                            MS
-                        </div>
+                        <img
+                            src={logo}
+                            alt="Logo"
+                            className="w-10 h-10 rounded-xl object-cover shadow-lg shadow-blue-500/30"
+                        />
                         <span className="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300">
                             Mayank Suratiya
                         </span>
