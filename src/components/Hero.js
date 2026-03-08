@@ -25,13 +25,13 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[24px] bg-perry-text/[0.03] border border-perry-border text-perry-text/80 text-xs tracking-widest uppercase font-medium mb-10 transition-colors hover:bg-perry-text/[0.08]">
-                                <span className="relative flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-transparent opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-transparent shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>
-                                </span>
-                                status: available
-                            </div>
+                            {/*<div className="inline-flex items-center gap-2 px-4 py-2 rounded-[24px] bg-perry-text/[0.03] border border-perry-border text-perry-text/80 text-xs tracking-widest uppercase font-medium mb-10 transition-colors hover:bg-perry-text/[0.08]">*/}
+                            {/*    <span className="relative flex h-2 w-2">*/}
+                            {/*        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-transparent opacity-75"></span>*/}
+                            {/*        <span className="relative inline-flex rounded-full h-2 w-2 bg-transparent shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>*/}
+                            {/*    </span>*/}
+                            {/*    status: available*/}
+                            {/*</div>*/}
 
                             <h1 className="text-[3.5rem] md:text-[5rem] font-medium tracking-tight text-perry-text leading-[1.1] mb-8">
                                 I build <br className="hidden md:block" />
