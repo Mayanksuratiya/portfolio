@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "mayanksuratiya",
+    "site": "mayank-suratiya",
     "public": "build",
     "ignore": [
       "firebase.json",
