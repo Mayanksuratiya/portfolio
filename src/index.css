@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,26 +7,46 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Force dark theme default for the Perry Wang look */
+    background-color: #101010;
   }
-  
+
   body {
-    @apply bg-slate-50 text-slate-900 transition-colors duration-300;
+    @apply bg-perry-bg text-perry-text transition-colors duration-300 antialiased font-sans;
   }
-  
-  .dark body {
-    @apply bg-slate-950 text-slate-100;
-  }
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(0, 87, 255, 0.25),
+    0 0 40px rgba(255, 90, 0, 0.15),
+    0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.glass-window {
+  @apply bg-[#151515] border border-white/5 shadow-[inset_0_2px_20px_#ffffff05] rounded-[32px];
 }
 
 @layer components {
   .section-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20;
   }
-  
+
   .glass-card {
     @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl dark:bg-slate-900/70 dark:border-slate-800/50;
   }
-  
+
   .glass-card-hover {
     @apply hover:bg-white/80 dark:hover:bg-slate-900/80 transition-all duration-300;
   }

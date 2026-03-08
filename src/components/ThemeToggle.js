@@ -8,14 +8,11 @@ const ThemeToggle = ({ theme, toggleTheme }) => {
             whileTap={{ scale: 0.9 }}
             onClick={toggleTheme}
             className={`
-        p-2 rounded-full backdrop-blur-md border shadow-lg transition-all duration-300
-        ${theme === 'dark'
-                    ? 'bg-slate-800/80 border-slate-700 text-yellow-400'
-                    : 'bg-white/80 border-slate-200 text-slate-700'}
+        p-2 rounded-full transition-all duration-300 bg-transparent/5 border border-white/10 text-perry-text hover:bg-transparent/10
       `}
             aria-label="Toggle theme"
         >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
         </motion.button>
     );
 };

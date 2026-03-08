@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Github, Linkedin, Smartphone, Mail } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
-import logo from '../logo.png';
+// import logo from '../logo.png';
 
 const Navbar = ({ theme, toggleTheme }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,50 +28,41 @@ const Navbar = ({ theme, toggleTheme }) => {
         <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-lg border-b border-slate-200/50 dark:border-slate-800/50'
-                : 'bg-transparent'
-                }`}
+            className="fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[95%] max-w-4xl"
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className={`mx-auto px-6 py-2 rounded-[24px] transition-all duration-300 ${scrolled
+                ? 'bg-[#151515]/80 backdrop-blur-xl border border-white/10 shadow-2xl'
+                : 'bg-transparent/[0.03] backdrop-blur-md border border-white/[0.05]'
+                }`}>
                 <div className="flex justify-between items-center h-16">
                     <motion.div
                         whileHover={{ scale: 1.05 }}
                         className="flex-shrink-0 flex items-center gap-2 cursor-pointer"
                     >
-                        <img
-                            src={logo}
-                            alt="Logo"
-                            className="w-10 h-10 rounded-xl object-cover shadow-lg shadow-blue-500/30"
-                        />
-                        <span className="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300">
+                        <span className="font-medium text-lg tracking-tight text-perry-text">
                             Mayank Suratiya
                         </span>
                     </motion.div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center space-x-6">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors relative group"
+                                className="text-sm font-medium text-perry-text/60 hover:text-perry-text transition-colors relative group"
                             >
                                 {link.name}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all group-hover:w-full" />
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-perry-text transition-all group-hover:w-full" />
                             </a>
                         ))}
-                        <div className="ml-4 border-l border-slate-200 dark:border-slate-700 pl-4">
-                            <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-                        </div>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center gap-4">
-                        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                            className="p-2 rounded-lg text-perry-text hover:bg-transparent/5 transition-colors"
                         >
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
@@ -87,7 +77,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 overflow-hidden"
+                        className="md:hidden bg-transparent border-b border-white/[0.1] overflow-hidden"
                     >
                         <div className="px-4 pt-2 pb-6 space-y-2">
                             {navLinks.map((link) => (
@@ -95,22 +85,22 @@ const Navbar = ({ theme, toggleTheme }) => {
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="block px-3 py-3 rounded-lg text-base font-medium text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                                    className="block px-3 py-3 rounded-lg text-base font-medium text-perry-dim hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                                 >
                                     {link.name}
                                 </a>
                             ))}
-                            <div className="flex justify-center gap-6 pt-4 mt-4 border-t border-slate-100 dark:border-slate-800">
-                                <a href="https://github.com/mayanksuratiya" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+                            <div className="flex justify-center gap-6 pt-4 mt-4 border-t border-white/[0.1]">
+                                <a href="https://github.com/mayanksuratiya" target="_blank" rel="noopener noreferrer" className="text-perry-dim hover:text-perry-text dark:hover:text-white transition-colors">
                                     <Github size={20} />
                                 </a>
-                                <a href="https://www.linkedin.com/in/mayank-suratiya-76040b384/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+                                <a href="https://www.linkedin.com/in/mayank-suratiya-76040b384/" target="_blank" rel="noopener noreferrer" className="text-perry-dim hover:text-perry-text dark:hover:text-white transition-colors">
                                     <Linkedin size={20} />
                                 </a>
-                                <a href="tel:+918527324066" className="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+                                <a href="tel:+918527324066" className="text-perry-dim hover:text-perry-text dark:hover:text-white transition-colors">
                                     <Smartphone size={20} />
                                 </a>
-                                <a href="mailto:mayanksuratiya84688@gmail.com" className="text-slate-500 hover:text-slate-900 dark:hover:text-white transition-colors">
+                                <a href="mailto:mayanksuratiya84688@gmail.com" className="text-perry-dim hover:text-perry-text dark:hover:text-white transition-colors">
                                     <Mail size={20} />
                                 </a>
                             </div>

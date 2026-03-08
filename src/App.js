@@ -37,7 +37,8 @@ function App() {
   };
 
   return (
-    <div className="bg-slate-50 dark:bg-slate-950 min-h-screen transition-colors duration-300">
+    <div className="bg-perry-bg text-perry-text min-h-screen transition-colors duration-300 relative selection:bg-white/20">
+      <div className="grain"></div>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />

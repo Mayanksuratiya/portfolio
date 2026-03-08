@@ -22,7 +22,7 @@ const Experience = () => {
             color: "blue"
         },
         {
-            company: "Fiverr",
+            company: "Freelance",
             role: "Web & UI Developer",
             period: "2025 - December",
             location: "Remote",
@@ -39,7 +39,7 @@ const Experience = () => {
     ];
 
     return (
-        <section id="experience" className="py-20 bg-slate-50 dark:bg-slate-900/50">
+        <section id="experience" className="py-20 bg-transparent">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -47,10 +47,10 @@ const Experience = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-400 dark:to-violet-400 mb-4">
+                    <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-perry-text to-perry-dim font-serif italic text-glow mb-4">
                         Professional Experience
                     </h2>
-                    <p className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                    <p className="text-perry-dim max-w-2xl mx-auto">
                         My journey in the tech industry, building real-world applications and delivering value.
                     </p>
                 </motion.div>
@@ -66,7 +66,7 @@ const Experience = () => {
                             className="relative pl-8 md:pl-0"
                         >
                             {/* Timeline Line (Desktop) */}
-                            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-800 -translate-x-1/2"></div>
+                            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-slate-200 bg-white/[0.05] -translate-x-1/2"></div>
 
                             {/* Timeline Dot (Desktop) */}
                             <div className={`hidden md:block absolute left-1/2 top-0 w-4 h-4 rounded-full border-4 border-white dark:border-slate-900 bg-${exp.color}-500 -translate-x-1/2 shadow-lg`}></div>
@@ -79,30 +79,30 @@ const Experience = () => {
                                         <span className={`inline-flex items-center gap-1 px-3 py-1 rounded-full bg-${exp.color}-100 dark:bg-${exp.color}-900/30 text-${exp.color}-600 dark:text-${exp.color}-400 text-sm font-semibold mb-2`}>
                                             <Calendar size={14} /> {exp.period}
                                         </span>
-                                        <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-1">{exp.role}</h3>
-                                        <p className="font-semibold text-lg text-slate-700 dark:text-slate-300 mb-2">{exp.company}</p>
-                                        <div className="flex items-center gap-1 text-slate-500 text-sm">
+                                        <h3 className="text-2xl font-bold text-perry-text mb-1">{exp.role}</h3>
+                                        <p className="font-semibold text-lg text-perry-text text-perry-dim mb-2">{exp.company}</p>
+                                        <div className="flex items-center gap-1 text-perry-dim text-sm">
                                             <MapPin size={14} /> {exp.location}
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Mobile View Header */}
-                                <div className="md:hidden mb-4 border-l-2 border-slate-200 dark:border-slate-800 pl-4 py-1">
-                                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">{exp.role}</h3>
+                                <div className="md:hidden mb-4 border-l-2 border-white/[0.1] pl-4 py-1">
+                                    <h3 className="text-xl font-bold text-perry-text">{exp.role}</h3>
                                     <p className="text-lg font-medium text-blue-600 dark:text-blue-400">{exp.company}</p>
-                                    <div className="flex items-center gap-4 mt-2 text-sm text-slate-500">
+                                    <div className="flex items-center gap-4 mt-2 text-sm text-perry-dim">
                                         <span className="flex items-center gap-1"><Calendar size={14} /> {exp.period}</span>
                                         <span className="flex items-center gap-1"><MapPin size={14} /> {exp.location}</span>
                                     </div>
                                 </div>
 
                                 {/* Content Card */}
-                                <div className="w-full md:w-5/12 bg-white dark:bg-slate-800/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-xl hover:shadow-2xl transition-all group">
-                                    <p className="text-slate-600 dark:text-slate-300 mb-4 italic">"{exp.description}"</p>
+                                <div className="w-full md:w-5/12 bg-transparent bg-white/[0.02] backdrop-blur-sm p-6 rounded-2xl border border-white/[0.1] shadow-xl hover:shadow-2xl transition-all group">
+                                    <p className="text-perry-dim mb-4 italic">"{exp.description}"</p>
                                     <ul className="space-y-3 mb-6">
                                         {exp.achievements.map((item, i) => (
-                                            <li key={i} className="flex items-start gap-2 text-slate-600 dark:text-slate-400 text-sm">
+                                            <li key={i} className="flex items-start gap-2 text-perry-dim text-sm">
                                                 <span className={`mt-1.5 w-1.5 h-1.5 rounded-full bg-${exp.color}-500 flex-shrink-0`} />
                                                 {item}
                                             </li>
@@ -110,7 +110,7 @@ const Experience = () => {
                                     </ul>
 
                                     {exp.links.length > 0 && (
-                                        <div className="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-700/50">
+                                        <div className="flex items-center gap-3 pt-4 border-t border-white/[0.1]/50">
                                             {exp.links.map((link, lIndex) => (
                                                 <a
                                                     key={lIndex}
