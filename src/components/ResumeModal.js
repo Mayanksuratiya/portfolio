@@ -24,22 +24,22 @@ const ResumeModal = ({ isOpen, onClose }) => {
                         className="relative w-full max-w-5xl h-[90vh] bg-[#151515] rounded-[32px] border border-white/10 overflow-hidden flex flex-col shadow-2xl"
                     >
                         {/* Header */}
-                        <div className="flex items-center justify-between p-6 border-b border-white/10 bg-[#1A1A1A]">
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500">
+                        <div className="flex flex-wrap items-center justify-between gap-3 p-4 md:p-6 border-b border-white/10 bg-[#1A1A1A]">
+                            <div className="flex items-center gap-3 min-w-0">
+                                <div className="p-2 rounded-lg bg-blue-500/10 text-blue-500 flex-shrink-0">
                                     <FileText size={20} />
                                 </div>
-                                <h3 className="text-xl font-medium text-white tracking-tight">Mayank_Suratiya_Resume.pdf</h3>
+                                <h3 className="text-sm md:text-xl font-medium text-white tracking-tight truncate">Mayank_Suratiya_Resume.pdf</h3>
                             </div>
 
-                            <div className="flex items-center gap-4">
+                            <div className="flex items-center gap-3 flex-shrink-0">
                                 <a
                                     href="/resume.pdf"
                                     download="Mayank_Suratiya_Resume.pdf"
-                                    className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black text-sm font-medium hover:bg-white/90 transition-all group"
+                                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black text-sm font-medium hover:bg-white/90 transition-all group"
                                 >
-                                    <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
-                                    Download
+                                    <Download size={16} className="group-hover:translate-y-0.5 transition-transform" />
+                                    <span className="hidden sm:inline">Download</span>
                                 </a>
 
                                 <button

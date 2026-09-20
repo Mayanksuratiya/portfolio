@@ -9,10 +9,12 @@
     scroll-behavior: smooth;
     /* Force dark theme default for the Perry Wang look */
     background-color: #101010;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-perry-bg text-perry-text transition-colors duration-300 antialiased font-sans;
+    overflow-x: hidden;
   }
 }
 
@@ -44,14 +46,57 @@
   }
 
   .glass-card {
-    @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl dark:bg-slate-900/70 dark:border-slate-800/50;
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl;
   }
 
   .glass-card-hover {
-    @apply hover:bg-white/80 dark:hover:bg-slate-900/80 transition-all duration-300;
+    @apply hover:bg-white/[0.08] hover:border-white/20 transition-all duration-300;
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-violet-600 dark:from-blue-400 dark:to-violet-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400;
   }
+
+  .text-gradient-amber {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400;
+  }
+
+  .phone-frame {
+    @apply relative rounded-[44px] border-[10px] border-[#1f242e] bg-[#0b0f17] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7),0_0_40px_rgba(59,130,246,0.15)] ring-1 ring-white/15 overflow-hidden;
+  }
+
+  .phone-frame-legacy {
+    @apply relative rounded-[36px] border-[10px] border-[#2d3139] bg-[#eef1f6] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] ring-1 ring-white/10 overflow-hidden;
+  }
+}
+
+/* Custom styles for Range Slider in Split Comparison */
+input[type="range"].comparison-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid #3b82f6;
+  cursor: ew-resize;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+}
+
+input[type="range"].comparison-slider::-moz-range-thumb {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid #3b82f6;
+  cursor: ew-resize;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+}
+
+/* Hide scrollbar for clean UI mockup view */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import AppComparison from './components/AppComparison';
+import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
-import Projects from './components/Projects';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -42,9 +43,10 @@ function App() {
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <main>
         <Hero />
-        <Skills />
-        <Experience />
+        <AppComparison />
         <Projects />
+        <Experience />
+        <Skills />
         <Education />
         <Contact />
       </main>

@@ -17,9 +17,10 @@ const Navbar = ({ theme, toggleTheme }) => {
 
     const navLinks = [
         { name: 'About', href: '#about' },
-        { name: 'Skills', href: '#skills' },
-        { name: 'Experience', href: '#experience' },
+        { name: 'App Redesign', href: '#app-comparison' },
         { name: 'Projects', href: '#projects' },
+        { name: 'Experience', href: '#experience' },
+        { name: 'Skills', href: '#skills' },
         { name: 'Education', href: '#education' },
         { name: 'Contact', href: '#contact' },
     ];
@@ -77,7 +78,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-transparent border-b border-white/[0.1] overflow-hidden"
+                        className="md:hidden mt-2 rounded-[20px] bg-[#151515]/95 backdrop-blur-xl border border-white/[0.08] overflow-hidden shadow-2xl"
                     >
                         <div className="px-4 pt-2 pb-6 space-y-2">
                             {navLinks.map((link) => (

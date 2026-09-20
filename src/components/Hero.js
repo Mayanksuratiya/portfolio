@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, FileText, Code, Smartphone } from 'lucide-react';
+import { ArrowRight, Code, Smartphone } from 'lucide-react';
 import ResumeModal from './ResumeModal';
 
 const Hero = () => {
@@ -9,14 +9,14 @@ const Hero = () => {
     return (
         <>
             <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
-            <section id="about" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-transparent">
+            <section id="about" className="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden bg-transparent">
                 {/* Perry Wang Style Radial Glows */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-transparent/[0.03] blur-[100px] pointer-events-none rounded-full" />
                 <div className="absolute top-1/4 -left-40 w-[500px] h-[500px] bg-blue-600/[0.05] blur-[120px] pointer-events-none rounded-full" />
                 <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-violet-600/[0.05] blur-[120px] pointer-events-none rounded-full" />
 
 
-                <div className="container px-4 md:px-6 relative z-10 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 flex flex-col md:flex-row items-center gap-10 lg:gap-20">
 
                     {/* Left Content */}
                     <div className="flex-1 space-y-8 text-center md:text-left">
@@ -25,20 +25,20 @@ const Hero = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
                         >
-                            {/*<div className="inline-flex items-center gap-2 px-4 py-2 rounded-[24px] bg-perry-text/[0.03] border border-perry-border text-perry-text/80 text-xs tracking-widest uppercase font-medium mb-10 transition-colors hover:bg-perry-text/[0.08]">*/}
-                            {/*    <span className="relative flex h-2 w-2">*/}
-                            {/*        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-transparent opacity-75"></span>*/}
-                            {/*        <span className="relative inline-flex rounded-full h-2 w-2 bg-transparent shadow-[0_0_8px_rgba(255,255,255,0.8)]"></span>*/}
-                            {/*    </span>*/}
-                            {/*    status: available*/}
-                            {/*</div>*/}
+                            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs tracking-wider uppercase font-semibold mb-6">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                </span>
+                                Available for New Roles & Projects
+                            </div>
 
-                            <h1 className="text-[3.5rem] md:text-[5rem] font-medium tracking-tight text-perry-text leading-[1.1] mb-8">
-                                I build <br className="hidden md:block" />
-                                <span className="font-serif italic font-normal bg-clip-text text-transparent bg-gradient-to-b from-[#F2F2F2] to-perry-dim text-glow">
+                            <h1 className="text-[2.6rem] sm:text-[3.2rem] md:text-[4.2rem] lg:text-[5.2rem] font-medium tracking-tight text-perry-text leading-[1.08] mb-6 md:mb-8">
+                                I craft <br className="hidden md:block" />
+                                <span className="font-serif italic font-normal bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-violet-400">
                                     digital experiences
                                 </span><br className="hidden md:block" />
-                                that matter.
+                                that scale.
                             </h1>
                         </motion.div>
 
@@ -46,9 +46,9 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.5 }}
-                            className="text-lg md:text-xl text-perry-dim max-w-2xl mx-auto md:mx-0 leading-relaxed font-light"
+                            className="text-base sm:text-lg md:text-xl text-perry-dim max-w-2xl mx-auto md:mx-0 leading-relaxed font-light"
                         >
-                            I'm <span className="text-perry-text font-medium">Mayank Suratiya</span>, a passionate <span className="text-perry-text font-medium">React & React Native Developer</span> from Delhi. I specialize in crafting modern, responsive web and mobile applications with a focus on performance and user experience.
+                            I'm <span className="text-white font-medium">Mayank Suratiya</span>, a <span className="text-blue-400 font-medium">React & React Native Developer</span> based in Delhi. I specialize in building blazing-fast web platforms and production-grade mobile apps with high-fidelity UI/UX.
                         </motion.p>
 
                         <motion.div
@@ -57,12 +57,19 @@ const Hero = () => {
                             transition={{ delay: 0.4, duration: 0.5 }}
                             className="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start"
                         >
-                            <a href="#projects" className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-perry-text text-perry-bg font-medium hover:bg-transparent transition-all flex items-center justify-center gap-2">
-                                View My Work <ArrowRight size={18} />
+                            <a 
+                                href="#app-comparison" 
+                                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-medium transition-all shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2 group"
+                            >
+                                <span>Explore Mobile Redesign</span>
+                                <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
                             </a>
 
-                            <a href="#contact" className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-transparent text-perry-text border border-perry-border font-medium hover:bg-perry-text/5 transition-all flex items-center justify-center gap-2">
-                                Contact Me
+                            <a 
+                                href="#projects" 
+                                className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-white/5 hover:bg-white/10 text-white border border-white/10 font-medium transition-all flex items-center justify-center gap-2"
+                            >
+                                View Selected Works
                             </a>
                         </motion.div>
 
@@ -76,7 +83,7 @@ const Hero = () => {
                             <SocialLink href="https://www.linkedin.com/in/mayank-suratiya-76040b384/" label="LinkedIn" />
                             <button
                                 onClick={() => setIsResumeOpen(true)}
-                                className="px-4 py-2 rounded-full border border-perry-border bg-perry-text/[0.02] text-perry-text/70 text-sm hover:text-perry-text hover:bg-perry-text/[0.05] transition-all uppercase tracking-wider font-medium"
+                                className="px-4 py-2 rounded-full border border-perry-border bg-white/[0.04] text-perry-text/80 text-xs hover:text-white hover:bg-white/10 transition-all uppercase tracking-wider font-semibold"
                             >
                                 Resume ↗
                             </button>
@@ -84,10 +91,10 @@ const Hero = () => {
                     </div>
 
                     {/* Right Visual: Device Mockups */}
-                    <div className="flex-1 w-full max-w-md md:max-w-none relative h-[500px] flex items-center justify-center mt-12 md:mt-0 perspective-[2000px]">
-                        <div className="relative w-full h-full max-w-lg mx-auto transform-style-3d">
+                    <div className="flex-1 w-full max-w-sm md:max-w-none relative flex items-center justify-center mt-8 md:mt-0 perspective-[2000px] h-[360px] md:h-[500px]">
+                        <div className="relative w-full h-full max-w-lg mx-auto">
 
-                            {/* MacBook 1 (Back Left) */}
+                            {/* MacBook 1 (Back Left) — Desktop only */}
                             <motion.div
                                 initial={{ opacity: 0, x: -100, y: -50, rotateY: 25, rotateX: 10 }}
                                 animate={{ opacity: 1, x: -40, y: -20, rotateY: 20, rotateX: 5 }}
@@ -109,7 +116,7 @@ const Hero = () => {
                                 <div className="absolute -bottom-2 left-[-5%] w-[110%] h-3 bg-slate-400 rounded-b-2xl"></div>
                             </motion.div>
 
-                            {/* MacBook 2 (Front Right) */}
+                            {/* MacBook 2 (Front Right) — Desktop only */}
                             <motion.div
                                 initial={{ opacity: 0, x: 100, y: 50, rotateY: -25, rotateX: 10 }}
                                 animate={{ opacity: 1, x: 60, y: 40, rotateY: -15, rotateX: 5 }}
@@ -136,33 +143,32 @@ const Hero = () => {
                                 </div>
                             </motion.div>
 
-                            {/* iPhone (Center Front) */}
+                            {/* iPhone (Center — always visible, repositioned on mobile) */}
                             <motion.div
-                                initial={{ opacity: 0, y: 150 }}
-                                animate={{ opacity: 1, y: 80, rotateZ: -5 }}
-                                whileHover={{ y: 60, rotateZ: 0 }}
+                                initial={{ opacity: 0, y: 100 }}
+                                animate={{ opacity: 1, y: 0, rotateZ: -5 }}
+                                whileHover={{ y: -10, rotateZ: 0 }}
                                 transition={{ duration: 0.8, delay: 0.6 }}
-                                className="absolute bottom-[10%] left-1/2 -translate-x-1/2 md:left-[30%] md:translate-x-0 w-[180px] h-[360px] bg-slate-900 rounded-[2.5rem] border-[6px] border-slate-800 shadow-[0_30px_60px_rgba(0,0,0,0.6)] z-20 overflow-hidden"
+                                className="absolute bottom-0 left-1/2 -translate-x-1/2 md:bottom-[5%] md:left-[30%] md:translate-x-0 w-[150px] h-[300px] sm:w-[160px] sm:h-[320px] md:w-[180px] md:h-[360px] bg-slate-900 rounded-[2.5rem] border-[6px] border-slate-800 shadow-[0_30px_60px_rgba(0,0,0,0.6)] z-20 overflow-hidden"
                             >
                                 {/* Dynamic Island */}
                                 <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[35%] h-5 bg-black rounded-full z-30"></div>
 
                                 {/* Screen */}
                                 <div className="w-full h-full bg-gradient-to-b from-blue-600 via-indigo-700 to-violet-900 p-4 pt-10 flex flex-col relative overflow-hidden">
-                                    {/* Ambient blobs inside screen */}
                                     <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-400 rounded-full blur-2xl opacity-60"></div>
                                     <div className="absolute bottom-0 -left-10 w-32 h-32 bg-violet-400 rounded-full blur-2xl opacity-60"></div>
 
                                     <div className="relative z-10">
-                                        <div className="w-12 h-12 rounded-2xl bg-transparent/20 backdrop-blur border border-white/30 flex items-center justify-center mb-6 shadow-lg">
-                                            <Smartphone size={24} className="text-white" />
+                                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-transparent/20 backdrop-blur border border-white/30 flex items-center justify-center mb-4 md:mb-6 shadow-lg">
+                                            <Smartphone size={20} className="text-white" />
                                         </div>
-                                        <h3 className="text-white font-semibold text-lg leading-tight mb-2">Mobile<br />Experience</h3>
-                                        <div className="w-16 h-1 bg-transparent/40 rounded-full mb-6"></div>
+                                        <h3 className="text-white font-semibold text-base md:text-lg leading-tight mb-2">Mobile<br />Experience</h3>
+                                        <div className="w-12 md:w-16 h-1 bg-transparent/40 rounded-full mb-4 md:mb-6"></div>
 
-                                        <div className="space-y-3">
-                                            <div className="w-full h-12 bg-transparent/10 backdrop-blur-md rounded-xl border border-white/10"></div>
-                                            <div className="w-full h-12 bg-transparent/10 backdrop-blur-md rounded-xl border border-white/10"></div>
+                                        <div className="space-y-2 md:space-y-3">
+                                            <div className="w-full h-10 md:h-12 bg-transparent/10 backdrop-blur-md rounded-xl border border-white/10"></div>
+                                            <div className="w-full h-10 md:h-12 bg-transparent/10 backdrop-blur-md rounded-xl border border-white/10"></div>
                                         </div>
                                     </div>
                                     <div className="w-1/3 h-1 bg-transparent/30 absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full"></div>
